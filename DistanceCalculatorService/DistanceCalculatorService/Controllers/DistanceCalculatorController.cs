@@ -21,7 +21,7 @@ namespace DistanceCalculatorService.Controllers
 
         
 
-        [HttpGet("{latitude:double}/{longitude:double}/{otherlatitude:double}/{otherlongitude:double}")]
+        [HttpGet("{latitude:double:range(-90,90)}/{longitude:double:range(-180,180)}/{otherlatitude:double:range(-90,90)}/{otherlongitude:double:range(-180,180)}")]
         public IActionResult Get(double latitude, double longitude, double otherlatitude, double otherlongitude, CalculationType calcType = CalculationType.Haversine, UnitOfDistance unitOfDistance = UnitOfDistance.Km)
         {
             try
